@@ -1,0 +1,59 @@
+{%extends 'facultyDashboard.html'%}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'makerequest.css' %}">
+{% endblock styles %}
+{%block navbar%}
+    <a class="nav-link active" aria-current="page" href="/faculty/facCourses">Your Courses</a>
+    <a class= "nav-link" href="/faculty/enrollment" >Enroll Student</a>
+    <a class="nav-link" href="/faculty/displayStudents" >Display Enrolled Students</a>
+    <a class="nav-link active" href="/faculty/updateGrade" >Grades</a>
+    <a class="nav-link" href="/faculty/updateAttendance" >Attendance</a>
+    <a class="nav-link" href="/faculty/facAnnouncement" >Announcements</a>
+    <a class="nav-link" href="/logout" >Logout</a>
+{%endblock%}
+{%block content%}
+<div class="container justify-content-center">
+<div class="row formCss g-3 p-5 my-5">
+    <form action="/faculty/updateGrade" id="courseSelection" method="get" >
+        <div class="row form-group">
+            <label for="course_name" class="form-label">Course</label>
+            <select name="course" id="course" onchange="getStudentsEnrolled(this.value)" class="form-control p-2">
+                {%for item in fac_courses %}
+                <option value="{{item.name}}" >{{item.name}}</option>
+                {%endfor%}
+            </select>
+        </div>    
+    </form>
+    <form action="/faculty/updateGrade" method="POST">
+        {%csrf_token%}
+        <div class="row form-group">
+            <input type="text" id="dummyCourse" name="course" style="display: none;"/>
+            <label for="stud" class="form-label">Student Name</label>
+            <select name="name" id="stud" class="form-control p-2">
+                {%for item in students%}
+                <option value="{{item.student.first_name}}">{{item.student.first_name}}</option>
+                {%endfor%}
+            </select>
+        </div>
+        <div class="row form-group">
+            <label for="grade" class="form-label">Grade Awarded</label>
+            <input type="text" name="grade" id="grade" class="form-control" required>
+        </div>
+        <div class="col-md-2 from-group mt-4">
+            <input type="submit" value="Update Grade" class="btn w-15 p-2 formButton">
+        </div>
+    </form><br>    
+</div>
+</div>
+<script>
+    function getStudentsEnrolled(course) {
+        if( course==="Select")
+        alert('Select a Course')
+        else
+        document.getElementById("courseSelection").submit();
+    }
+    document.getElementById('course').value = "{{course_selected}}"
+    document.getElementById('dummyCourse').value = "{{course_selected}}"
+</script>
+{%endblock%}

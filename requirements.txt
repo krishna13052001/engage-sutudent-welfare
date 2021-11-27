@@ -1,0 +1,3 @@
+Install the following libraries using pip
+
+pip install django

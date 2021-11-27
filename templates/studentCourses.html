@@ -1,0 +1,49 @@
+{%extends "studentDashboard.html"%}
+{% block navbar %}
+    <a class="nav-link active" aria-current="page" href="/student/enrollments">Your Courses</a>
+    <a class="nav-link" href="/student/makeBookRequest">Library</a>
+    <a class="nav-link" href="/student/requestService">Request Service</a>
+    <a class="nav-link" href="/student/studAnnouncement">Anouncements</a>
+    <a class="nav-link" href="/logout">Log out</a>
+{% endblock navbar %}
+
+{%block content%}
+<div class="container inProgress">
+      <p class="p-0 inProgressHeading">
+        Courses Enrolled
+      </p>
+
+      <div class="progressCardsRow">
+        <div class="row">
+            {%for item in courses%}
+                <div class="col-12 col-md-6 col-xxl-3">
+            <a href="" style="text-decoration: none; color: #000;">
+              <div class="progressCard card border-0">
+                <div class="card-header bg-white">
+                  <span>
+                    <strong class="courseName">{{item.course.name}}</strong>
+                  </span>
+                </div>
+                <div class="row">
+                  <div class="col details">
+                    <p class="faculty mb-0">
+                      <stong>Faculty: </strong>{{item.faculty.first_name}}
+                    </p>
+                    <p class="faculty mb-0">
+                      <strong>Attendance : </strong>{{item.attendance}}
+                    </p>
+                    <p class="faculty mb-0">
+                      <strong>Grade Awarded: </strong>{{item.grade}}
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+            </a>
+          </div>
+            
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+{%endblock%}

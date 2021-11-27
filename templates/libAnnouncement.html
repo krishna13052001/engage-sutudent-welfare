@@ -1,0 +1,59 @@
+{%extends 'libraryDashboard.html'%}
+{%load static%} {% block styles %}
+<link rel="stylesheet" href="{% static 'makerequest.css' %}" />
+{% endblock styles %}
+{%block navbar%}
+    <a href="/librarian/addBook" class="nav-link" aria-current="page">Add Book</a>
+    <a href="/librarian/bookrequest" class="nav-link">Book Request</a>
+    <a href="/librarian/alertUser" class="nav-link">Send Email to User</a>
+    <a href="/librarian/makeAnnouncement" class="nav-link active">Announcements</a>
+    <a href="/logout" class="nav-link">Logout</a>
+{%endblock%} 
+{%block content%}
+<div class="container">
+    <form action="" method="POST" class="row formCss g-3 pb-5 my-5 justify-content-center" autocomplete="off">
+        {%csrf_token%}
+        <div class="col-md-9">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+                type="text"
+                name="message"
+                id="message"
+                class="form-control"
+                required
+            ></textarea>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-2">
+                <input type="submit" value="Submit" class="btn w-15 p-3 formButton bg-blue" />
+            </div>
+        </div>
+    </form>
+    <br />
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-lg-9">
+                <p class="p-0 heading">Your Announcements</p>
+                {% if announcements %} {% for items in announcements %}
+                <div class="card w-100 bookCard">
+                    <div class="row">
+                        <div class="col">
+                            <p><strong>Date</strong> {{items.date}}</p>
+                            <p class="mb-2">{{items.message}}</p>
+                            <a
+                                href="/librarian/deleteAnnouncement/{{items.id}}"
+                                class="btn btn-danger"
+                                >Delete</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                {% endfor %} {% else %}
+                <strong class="px-4">You have no requests</strong>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

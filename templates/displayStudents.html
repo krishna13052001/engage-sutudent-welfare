@@ -1,0 +1,48 @@
+{%extends "facultyDashboard.html"%}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'makerequest.css' %}">
+{% endblock styles %}
+{%block navbar%}
+    <a class="nav-link" aria-current="page" href="/faculty/facCourses">Your Courses</a>
+    <a class= "nav-link " href="/faculty/enrollment" >Enroll Student</a>
+    <a class="nav-link active" href="/faculty/displayStudents" >Display Enrolled Students</a>
+    <a class="nav-link" href="/faculty/updateGrade" >Grades</a>
+    <a class="nav-link" href="/faculty/updateAttendance" >Attendance</a>
+    <a class="nav-link" href="/faculty/facAnnouncement" >Announcements</a>
+    <a class="nav-link" href="/logout" >Logout</a>
+{%endblock%}
+
+
+{%block content%}
+<div class="container">
+   <div class="container-fluid" style="margin-bottom: 5vh;margin-top: 7vh;">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-12 col-lg-9 ">
+                <a href="/faculty/downloadEnrollments" class="btn w-15 p-2 formButton">Download Statistics</a>
+                    <p class="p-0 heading">
+                        Enrolled Students
+                    </p>
+                    {% if students %}
+                        {% for item in students %}
+                            <div class="card w-100 bookCard">
+                                <div class="row">
+                                    <div class="col">
+                                        <strong>{{item.student.first_name  }}</strong><br>
+                                        <p class="text-muted mt-3 ">Course Name: {{item.course.name}}</p>
+                                        <p class="text-muted mt-3">Attendance: {{item.attendance}}</p>
+                                        <p class="mb-2">Grade: {{item.grade}}<p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-center">No students enrolled</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

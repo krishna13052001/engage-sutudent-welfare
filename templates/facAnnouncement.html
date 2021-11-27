@@ -1,0 +1,56 @@
+{%extends 'facultyDashboard.html'%}
+{%load static%} {% block styles %}
+<link rel="stylesheet" href="{% static 'makerequest.css' %}" />
+{% endblock styles %} 
+{% block navbar %}
+    <a class="nav-link active" aria-current="page" href="/faculty/facCourses">Your Courses</a>
+    <a class= "nav-link" href="/faculty/enrollment" >Enroll Student</a>
+    <a class="nav-link" href="/faculty/displayStudents" >Display Enrolled Students</a>
+    <a class="nav-link" href="/faculty/updateGrade" >Grades</a>
+    <a class="nav-link" href="/faculty/updateAttendance" >Attendance</a>
+    <a class="nav-link active" href="/faculty/facAnnouncement" >Announcements</a>
+    <a class="nav-link" href="/logout" >Logout</a>
+{% endblock navbar %}
+{%block content%}
+<div class="container">
+    <div class="container">
+        <div class="container-fluid" style="margin-bottom: 5vh; margin-top: 7vh">
+            <form action="/faculty/facAnnouncement" method="POST" class="row formCss g-3 p-3 pb-4 my-5 justify-content-center">
+                {%csrf_token%}
+                <div class="row form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea type="text" name="message" id="message" class="form-control" required></textarea>
+                </div>
+                <div class="row form-group justify-content-center">
+                    <div class="col-md-2">
+                        <input type="submit" value="Submit" class="btn w-15 p-2 mt-1 formButton bg-blue">
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-lg-9">
+                        <p class="p-0 heading">Your Announcements</p>
+                        {% if announcements %}
+                            {% for items in announcements %}
+                            <div class="card w-100 bookCard">
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Date</strong> {{items.date}}</p>
+                                        <p class="mb-2">{{items.message}}</p>
+                                        <a href="/faculty/deleteAnnouncement/{{items.id}}" class="btn btn-danger">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <strong class="px-4">You have no requests</strong>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

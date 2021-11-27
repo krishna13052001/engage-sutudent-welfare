@@ -1,0 +1,121 @@
+body {
+    background-color: rgb(225, 235, 243);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    padding: 0.8vw;
+}
+
+.nav-link {
+    margin-left: 0.6vw;
+    margin-right: 0.6vw;
+    font-size: large;
+}
+
+.heading {
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.navIcon {
+    border-radius: 50%;
+    height: 50px;
+    margin-right: 5px;
+}
+
+.cartCard {
+    padding: 20px;
+    width: 100%;
+    min-height: 50vh;
+    background: rgba(237, 239, 245, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.cartCardHeading {
+    font-size: x-large;
+}
+
+.bookCard {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    border: none;
+}
+
+.bookCard:hover {
+    box-shadow: 8px 5px 11px 0px rgba(0, 0, 0);
+    -webkit-box-shadow: 8px 5px 11px 0px rgba(0, 0, 0);
+    -moz-box-shadow: 8px 5px 11px 0px rgba(0, 0, 0);
+    box-shadow: -9px -4px 11px 0px rgba(210, 210, 210);
+    -webkit-box-shadow: -9px -4px 11px 0px rgba(210, 210, 210);
+    -moz-box-shadow: -9px -4px 11px 0px rgba(210, 210, 210);
+}
+
+.bookImage {
+    border-radius: 5mm;
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Form css */
+.formCss {
+    background-color: rgb(225, 235, 243);
+    box-shadow: 3px 3px 5px #BABECC, -5px -5px 10px #FFF;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+.form-control {
+    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    border: 0;
+    background-color: rgb(225, 235, 243);
+    padding: 15px;
+}
+
+.form-label{
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: large;
+}
+
+.formButton{
+    box-shadow: 3px 3px 5px #BABECC, -5px -5px 10px #FFF;
+}
+
+.formButton:hover{
+    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+}
+
+
+.cartBookImage {
+    border-radius: 5mm;
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.list-group .list-group-item {
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    padding: 15px;
+}
+
+.list-group-item:hover {
+    box-shadow: 8px 5px 11px 0px rgba(0, 0, 0);
+    -webkit-box-shadow: 8px 5px 11px 0px rgba(0, 0, 0);
+    -moz-box-shadow: 8px 5px 11px 0px rgba(0, 0, 0);
+    box-shadow: -9px -4px 11px 0px rgba(210, 210, 210);
+    -webkit-box-shadow: -9px -4px 11px 0px rgba(210, 210, 210);
+    -moz-box-shadow: -9px -4px 11px 0px rgba(210, 210, 210);
+}

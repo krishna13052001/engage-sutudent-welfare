@@ -1,0 +1,37 @@
+{%extends 'libraryDashboard.html'%}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'makerequest.css'%}"
+{% endblock %}
+{%block navbar%}
+    <a href="/librarian/addBook" class="nav-link" aria-current="page">Add Book</a>
+    <a href="/librarian/bookrequest" class="nav-link">Book Request</a>
+    <a href="/librarian/alertUser" class="nav-link active">Send Email to User</a>
+    <a href="/librarian/makeAnnouncement" class="nav-link">Announcements</a>
+    <a href="/logout" class="nav-link">Logout</a>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <form action="" method="POST" class="row formCss g-3 pb-5 my-5 justify-content-center" autocomplete="off">
+        {%csrf_token%}
+        <div class="col-md-9">
+            <label for="user" class="form-label">Student</label>
+            <select name="name" id="user" class="form-control p-2 m-2">
+                {%for item in obj%}
+                <option value="{{item.id}}">{{item.first_name}}</option>
+                {%endfor%}
+            </select>
+        </div>
+        <div class="col-md-9">
+            <label for="message">Message</label>
+            <textarea type="text" name="message" id="message" class="form-control" required></textarea>
+        </div>
+        <br>
+        <div class="row justify-content-center mt-4">
+        <div class="col-md-3">
+            <input type="submit" value="Send Mail" class="btn w-15 p-3 formButton bg-blue">
+        </div>
+        </div>
+    </form><br>    
+</div>
+{%endblock%}

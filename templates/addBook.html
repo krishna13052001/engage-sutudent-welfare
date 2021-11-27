@@ -1,0 +1,96 @@
+{%extends 'libraryDashboard.html'%}
+{%load static%} 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'makerequest.css' %}" />
+{% endblock styles %} 
+
+{% block navbar %}
+    <a href="/librarian/addBook" class="nav-link active" aria-current="page">Add Book</a>
+    <a href="/librarian/bookrequest" class="nav-link">Book Request</a>
+    <a href="/librarian/alertUser" class="nav-link">Send Email to User</a>
+    <a href="/librarian/makeAnnouncement" class="nav-link">Announcements</a>
+    <a href="/logout" class="nav-link">Logout</a>
+{% endblock navbar %}
+
+{%block content%}
+<div class="container">
+    <form action="" method="POST" enctype="multipart/form-data" class="row formCss g-3 p-5 my-5 justify-content-center" autocomplete="off">
+        {%csrf_token%}
+        <div class="col-md-6">
+            <label for="book_name" class="form-label">Book Name</label>
+            <input type="text" name="name" id="book_name" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label for="author_name" class="form-label">Book Author Name</label>
+            <input type="text" name="author" id="author_name" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label for="noc" class="form-label">Number of Copies</label>
+            <input type="text" name="no_of_copies" id="noc" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label for="noc" class="form-label">Cover Photo</label>
+            <input type="file" id="file" name="image" class="form-control p-2" >
+        </div>
+        <div class="row form-group mt-2">
+            <label for="noc" class="form-label">Description</label>
+            <textarea type="text" name="description" id="description" class="form-control" required></textarea>
+        </div>
+        <div class="row form-group justify-content-center">
+            <div class="col-md-2">
+            <input type="submit" value="Add Book" class="btn w-15 p-3 formButton bg-blue">
+            </div>
+        </div>
+    </form><br>
+    <div class="container">
+        <div class="container-fluid" style="margin-bottom: 5vh; margin-top: 7vh">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-lg-9">
+                <p class="p-0 heading">Books</p>
+                {% if books %}
+                    {% for items in books %}
+                        <div class="card w-100 bookCard">
+                            <div class="row">
+                                <div class="col">
+                                    <p><strong>Book</strong> {{items.name}}</p>
+                                    <p class="mb-2">Author : {{items.author}}</p>
+                                    <p class="text-muted mt-3"><strong> No of copies: </strong>{{items.no_of_copies}}</p>
+                                    <a href="/librarian/deleteBook/{{items.id}}" class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <strong class="px-4">You have no requests</strong>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <br>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#file').change(function () {
+            var file = this.files[0];
+            var fileType = file["type"];
+            var ValidImageTypes = ["image/jpeg", "image/png"];
+            if ($.inArray(fileType, ValidImageTypes) < 0) {
+                alert("Please select a valid image file.");
+                $('#file').val('');
+            }
+        });
+    });
+
+    var uploadField = document.getElementById("file");
+
+    uploadField.onchange = function() {
+        if(this.files.size > 10485760){ //10mb
+         alert("File is too big!");
+        this.value = "";
+        };
+    };
+</script>
+{%endblock%}

@@ -1,0 +1,40 @@
+{%extends "studentDashboard.html"%}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'makerequest.css' %}">
+{% endblock styles %}
+{% block navbar %}
+    <a class="nav-link" aria-current="page" href="/student/enrollments">Your Courses</a>
+    <a class="nav-link" href="/student/makeBookRequest">Library</a>
+    <a class="nav-link" href="/student/requestService">Request Service</a>
+    <a class="nav-link active" href="/student/studAnnouncement">Anouncements</a>
+    <a class="nav-link" href="/logout">Log out</a>
+{% endblock navbar %}
+{%block content%}
+<div class="container">
+    <div class="container-fluid" style="margin-bottom: 5vh;margin-top: 7vh;">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-12 col-lg-9 ">
+                    <p class="p-0 heading">
+                        Announcements
+                    </p>
+                    {% for items in announcements %}
+                        <div class="card w-100 bookCard">
+                            <div class="row">
+                                <div class="col">
+                                    <strong>{{items.announce_from.first_name}}</strong><br>
+                                    <p class="text-muted mt-3 ">Department: {{items.announce_from.user_type}}</p>
+                                    <p class="text-muted mt-3"></p>
+                                    <p class="mb-2">{{items.message}}<p>
+                                    <strong>Date</strong> {{items.date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

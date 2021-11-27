@@ -1,0 +1,135 @@
+{%extends "libraryDashboard.html"%}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'makerequest.css' %}">
+    <link rel="stylesheet" href="{% static 'table.css' %}" >
+{% endblock %}
+{%block navbar%}
+    <a href="/librarian/addBook" class="nav-link" aria-current="page">Add Book</a>
+    <a href="/librarian/bookrequest" class="nav-link active">Book Request</a>
+    <a href="/librarian/alertUser" class="nav-link">Send Email to User</a>
+    <a href="/librarian/makeAnnouncement" class="nav-link">Announcements</a>
+    <a href="/logout" class="nav-link">Logout</a>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="container-fluid p-2 m-2">
+        <div class="container">
+            <div class="row">
+                <h4>Pending Book Requests</h4>
+                <div class="col-md-12">
+                    {% if book_request %}
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr class="main text-center">
+                                    <th scope="col">Book Name</th>
+                                    <th scope="col">Requested Person</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Expected Return Date</th>
+                                    <th scope="col" colspan="2">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in book_request %}
+                                    <tr>
+                                        <td scope="row">{{item.book.name}}</td>
+                                        <td>{{item.requested_by.first_name}}</td>
+                                        <td>{{item.date}}</td>
+                                        <td>{{item.return_date}}</td>
+                                        <td><a href="/librarian/acceptBookRequest/{{item.id}}" class="btn btn-outline-primary">Accept</a></td>
+                                        <td><a href="/librarian/rejectBookRequest/{{item.id}}" class="btn btn-outline-danger">Reject</a></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p><strong>No pending book requests</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-2 m-2">
+        <div class="container">
+            <div class="row formCss p-3">
+                <h4>Submit Request Update</h4>
+                    <div class="col-sm-6">
+                        <form action="/librarian/bookrequest" id="studentSelection" method="get">
+                            <div class="row">
+                                <div class="col-sm form-group">
+                                    <label for="student_name" class="form-label">Select Student</label>
+                                    <select name="student" id="student" onchange="getStudentsRequest(this.value)" class="form-control p-2">
+                                        {%for item in all_students %}
+                                        <option value="{{item.username}}" >{{item.username}}</option>
+                                        {%endfor%}
+                                    </select>
+                                </div>
+                            </div>    
+                        </form>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm form-group">
+                            <form action="/librarian/submitBook" method="POST">
+                                {%csrf_token%}
+                                <label for="book_return" class="form-label">Select Book to be Returned</label>
+                                <select name="rid" id="rid" class="form-control p-2">
+                                    {%for item in selected_student_requests %}
+                                    <option value="{{item.id}}" >{{item.book.name}}</option>
+                                    {%endfor%}
+                                </select>
+                                <br>
+                                <button type="submit" class="btn w-15 p-3 formButton bg-blue">Submit Book</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    
+    <div class="container-fluid p-2 m-2">
+        <div class="container">
+            <div class="row">
+                <h4>All Book Requests</h4>
+                <div class="col-md-12">
+                    {% if all_request %}
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr class="main text-center">
+                                    <th scope="col">Book Name</th>
+                                    <th scope="col">Requested Person</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Expected Return Date</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in all_request %}
+                                    <tr class="text-center">
+                                        <td scope="row">{{item.book.name}}</td>
+                                        <td>{{item.requested_by.first_name}}</td>
+                                        <td>{{item.date}}</td>
+                                        <td>{{item.return_date}}</td>
+                                        <td>{{item.status}}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p><strong>No book request found</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<script>
+function getStudentsRequest(course) 
+{
+    if( course==="Select")
+    alert('Select a Student')
+    else
+    document.getElementById("studentSelection").submit();
+}
+document.getElementById('student').value = "{{selected_student}}"
+</script>
+{%endblock%}

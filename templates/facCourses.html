@@ -1,0 +1,40 @@
+{%extends "facultyDashboard.html"%}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'makerequest.css' %}">
+{% endblock styles %}
+{%block navbar%}
+    <a class="nav-link active" aria-current="page" href="/faculty/facCourses">Your Courses</a>
+    <a class= "nav-link" href="/faculty/enrollment" >Enroll Student</a>
+    <a class="nav-link" href="/faculty/displayStudents" >Display Enrolled Students</a>
+    <a class="nav-link" href="/faculty/updateGrade" >Grades</a>
+    <a class="nav-link" href="/faculty/updateAttendance" >Attendance</a>
+    <a class="nav-link" href="/faculty/facAnnouncement" >Announcements</a>
+    <a class="nav-link" href="/logout" >Logout</a>
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="container-fluid" style="margin-bottom: 5vh;margin-top: 7vh;">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 col-lg-9 ">
+                    <p class="p-0 heading">
+                        Courses Offered by {{request.user.first_name}}
+                    </p>
+                    {% for item in course %}
+                        <div class="card w-100 bookCard">
+                            <div class="row">
+                                <div class="col">
+                                    <strong>Course Name: {{item.name}}</strong><br>
+                                    <p class="text-muted mt-3 ">Description: {{item.description}}</p>
+                                    <p class="text-muted mt-3">Faculty Assigned : {{item.faculty.first_name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,76 @@
+{%extends "adminDashboard.html"%}
+{%block content%}
+<div class="container">
+    <div class="container-fluid p-2 m-2">
+        <div class="container">
+            <div class="row">
+                <h4>Pending Service Request</h4>
+                <div class="col-md-12">
+                    {% if pending %}
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr class="main text-center">
+                                    <th scope="col">Student Name</th>
+                                    <th scope="col">Service Title</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Message</th>
+                                    <th scope="col" colspan="2">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in pending %}
+                                    <tr>
+                                        <td scope="row">{{item.user.first_name}}</td>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.date}}</td>
+                                        <td>{{item.message}}</td>
+                                        <td><a href="/dadmin/acceptServiceRequest/{{item.id}}" class="btn btn-outline-primary">Accept</a></td>
+                                        <td><a href="/dadmin/rejectServiceRequest/{{item.id}}" class="btn btn-outline-danger">Reject</a></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p><strong>No pending service requests</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-2 m-2">
+        <div class="container">
+            <div class="row">
+                <h4>All Service Requests</h4>
+                <div class="col-md-12">
+                    {% if all %}
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr class="main text-center">
+                                    <th scope="col">Student Name</th>
+                                    <th scope="col">Service Title</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Message</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in all %}
+                                    <tr class="text-center">
+                                        <td scope="row">{{item.user.first_name}}</td>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.date}}</td>
+                                        <td>{{item.message}}</td>
+                                        <td>{{item.status}}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p><strong>No service request found</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

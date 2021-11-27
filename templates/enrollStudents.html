@@ -1,0 +1,45 @@
+{%extends 'facultyDashboard.html'%}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'makerequest.css' %}">
+{% endblock %}
+
+{%block navbar%}
+    <a class="nav-link" aria-current="page" href="/faculty/facCourses">Your Courses</a>
+    <a class= "nav-link active" href="/faculty/enrollment" >Enroll Student</a>
+    <a class="nav-link" href="/faculty/displayStudents" >Display Enrolled Students</a>
+    <a class="nav-link" href="/faculty/updateGrade" >Grades</a>
+    <a class="nav-link" href="/faculty/updateAttendance" >Attendance</a>
+    <a class="nav-link" href="/faculty/facAnnouncement" >Announcements</a>
+    <a class="nav-link" href="/logout" >Logout</a>
+{%endblock%}
+
+
+{%block content%}
+<div class="container">
+    <form action="/faculty/enrollment" method="POST" class="row formCss g-3 pb-5 my-5 justify-content-center">
+        {%csrf_token%}
+        <div class="col-md-5">
+            <label for="course_name" class="form-label">Course</label>
+            <select name="course" id="course_name" class="form-control p-2">
+                {%for item in course%}
+                <option value="{{item.name}}">{{item.name}}</option>
+                {%endfor%}
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="stud" class="form-label">Student Name</label>
+            <select name="student" id="course_name" class="form-control p-2">
+                {%for item in students%}
+                <option value="{{item.username}}">{{item.first_name}}</option>
+                {%endfor%}
+            </select>
+        </div>
+        <div class="row form-group justify-content-center mt-5">
+            <div class="col-md-2">
+                <input type="submit" value="Enroll Student" class="btn w-15 p-2 formButton bg-blue">
+            </div>
+        </div>
+    </form><br>    
+</div>
+{%endblock%}

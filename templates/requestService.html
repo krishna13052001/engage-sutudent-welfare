@@ -1,0 +1,71 @@
+{%extends 'studentDashboard.html'%} {%load static%} {% block styles %}
+<link rel="stylesheet" href="{% static 'makerequest.css' %}" />
+{% endblock styles %} {% block navbar %}
+<a class="nav-link" aria-current="page" href="/student/enrollments"
+    >Your Courses</a
+>
+<a class="nav-link" href="/student/makeBookRequest">Library</a>
+<a class="nav-link active" href="/student/requestService">Request Service</a>
+<a class="nav-link" href="/student/studAnnouncement">Anouncements</a>
+<a class="nav-link" href="/logout">Log out</a>
+{% endblock navbar %} {%block content%}
+<div class="container mt-5">
+    <form action="" method="POST" autocomplete="off">
+        {%csrf_token%}
+        <div class="row form-group">
+            <strong><label for="req_name" class="form-label">Request Name</label></strong>
+            <input
+                type="text"
+                name="name"
+                id="req_name"
+                class="form-control"
+                required
+            />
+        </div>
+        <br>
+        <div class="row form-group">
+            <strong><label for="req_message" class="form-label">Message</label><strong>
+            <textarea
+                type="text"
+                name="message"
+                id="req_message"
+                class="form-control"
+                required
+            ></textarea>
+        </div>
+        <br>
+        <input type="submit" value="Place Request" class="btn btn-primary" />
+    </form>
+    <br />
+
+    <div class="container">
+        <div class="container-fluid" style="margin-bottom: 5vh; margin-top: 7vh">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-lg-9">
+                        <p class="p-0 heading">Your Past Requests</p>
+                        {% if my_request %}
+                            {% for items in my_request %}
+                            <div class="card w-100 bookCard">
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Date</strong> {{items.date}}</p>
+                                        <strong
+                                            >{{items.name}}</strong
+                                        ><br />
+                                        <p class="mb-2">{{items.message}}</p>
+                                        <p class="text-muted mt-3"><strong>Status :   </strong> {{items.status}} </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <strong class="px-4">You have no requests</strong>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

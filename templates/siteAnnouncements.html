@@ -1,0 +1,65 @@
+{%extends 'adminDashboard.html'%}
+{%block content%}
+<div class="container">
+    <div class="container my-3">
+        <form action="/dadmin/site" method="POST" class="row formCss g-3 py-5 my-5 justify-content-center">
+        {%csrf_token%}
+        <div class="col-md-9 mb-3">
+            <label for="message" class="form-label">Message</label>
+            <input type="text" name="message" id="message" class="form-control" required>
+        </div>
+        <br>
+        <div class="col-md-2">
+            <label for="link" class="form-label">Link Present</label>
+            <select name="link_exist" id="link" class="form-control p-2" required>
+                <option value="True">Yes</option>
+                <option value="False">No</option>
+            </select>
+        </div>
+        <div class="col-md-5">
+            <label for="url" class="form-label">Link URL</label>
+            <input type="text" name="link" id="url" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <br>
+            <input type="submit" value="Submit" class="btn w-15 p-3 formButton">
+        </div>
+    </form>
+    <br>
+    <h4>Site Announcements</h4>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 p-5">
+                    {% if announcements %}
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr class="main text-center">
+                                    <th scope="col">Message</th>
+                                    <th scope="col">Link Exist</th>
+                                    <th scope="col">URL</th>
+                                    <th scope="col">Operation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for announcement in announcements%}
+                                <tr class="text-center">
+                                    <td scope="row">{{announcement.message}}</td>
+                                    <td>{{announcement.link_exist}}</td>
+                                    <td>{{announcement.link}}</td>
+                                    <td>
+                                        <a href="/dadmin/site/delete/{{announcement.id}}" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <h4>No Site Announcements</h4>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

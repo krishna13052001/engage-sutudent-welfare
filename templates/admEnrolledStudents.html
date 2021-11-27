@@ -1,0 +1,31 @@
+{%extends "adminDashboard.html"%}
+{%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col p-5">
+            <table class="table table-borderless">
+                <thead>
+                    <tr class="main text-center">
+                        <th scope="col">Student</th>
+                        <th scope="col">Faculty</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Attendance</th>
+                        <th scope="col">Grade Awarded </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in enrollment %}
+                    <tr class="text-center">
+                        <td>{{item.student.first_name}}</td>
+                        <td>{{item.faculty.first_name}}</td>
+                        <td>{{item.course.name}}</td>
+                        <td>{{item.attendance}}</td>
+                        <td>{{item.grade}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock%}
