@@ -98,3 +98,5 @@ Librarian Details:
    Password: librarian
 ```
 ## Documents
+
+- [List of Featues](https://docs.google.com/document/d/1D9eFgnfJ0DeSI6RJZR0ki6eRuvuLkPGC/edit?usp=sharing&ouid=116513581242175548881&rtpof=true&sd=true)
