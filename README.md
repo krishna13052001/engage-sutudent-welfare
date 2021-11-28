@@ -15,7 +15,7 @@ My name is Sathya Krishna, as a part of the Microsoft engage mentorship program,
 
 - [website](https://engage-student-welfare.herokuapp.com/)
 
-Note: This repository is not the repository used for the deployment because for the production i had used some API keys so repository can't public.
+Note: This repository is not the repository used for the deployment, because for the production I had used AWS and Heroku API keys so repository can't be public.
 
 
 Video Link: [YouTube Link](https://youtu.be/nOpr2SCJiic)
@@ -27,24 +27,29 @@ Git steps
   git clone https://github.com/krishna13052001/engage-sutudent-welfare
 ```
 
-Project Installation with django
+Project Installation with django.
+
+
 Navigate into the folder and open the cmd where manage.py is located
 ```bash
    pip install -r requirements.txt
 ```
 
-To Run the site
-```bash
-   python manage.py runserver
-```
-
-While Running above command any problem pillow Installation from requirements [Red color is indicator for problem]
+While Running above command, If any problem occured regarding pillow Installation from requirements.txt [Red color is indicator for problem]
 
 Try:
 
 ```bash
    pip install pillow
 ```
+
+
+To Run the site.
+```bash
+   python manage.py runserver
+```
+
+
 
 If problem while Running the command python manage.py runserver and it indicates the manage.py not found then
 try:
