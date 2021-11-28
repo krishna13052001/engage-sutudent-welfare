@@ -132,11 +132,11 @@ Password: admin
 On Successfull Login:
 <img src="https://github.com/krishna13052001/engage-images/blob/master/adminHome.jpg" alt="Image Not Loaded">
 
-Now Clike on the Users, and select any user and select the below option:
+Now Click on the Users, and select any user and select the below option:
 <img src="https://github.com/krishna13052001/engage-images/blob/master/adminChange.jpg" alt="Image Not Loaded">
 
-  * Forget Password
-  Click on the Forgot password on the Home page then you will redirect to changePassword
+  * Forgot Password
+  Click on the Forgot password on the Home page then you will redirect to changePassword page
   <img src="https://github.com/krishna13052001/engage-images/blob/master/changePassword.jpg" alt="Image Not Loaded">
 
   Now, Enter the OTP which recive to mail
