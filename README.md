@@ -104,7 +104,8 @@ Librarian Details:
 
 ## Featues with Images
 
-- <img src="https://drive.google.com/file/d/1H5jel_4YOfp0qCRApRAj-kv3_5HicsDQ/view" alt="Image Not Loaded" />
+- [https://drive.google.com/file/d/1xH8LwQRCoz87OTUgT8JQOYgHE8oxQRGs/view?usp=sharing](https://drive.google.com/file/d/1xH8LwQRCoz87OTUgT8JQOYgHE8oxQRGs/view?usp=sharing)
+
 
 
 ```bash
