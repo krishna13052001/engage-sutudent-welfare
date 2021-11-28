@@ -122,7 +122,7 @@ Librarian Details:
   New users registers themselves with their name, email address, a unique username, safe password and selects their role in the college.
 ```
 
-A Normal user can able to convert as admin user using admin account to login to default admin use this link: [adminLink](https://engage-student-welfare.herokuapp.com/admin/)
+A Normal user can able to convert as admin user using admin account to login to default admin.<br> use this link: [adminLink](https://engage-student-welfare.herokuapp.com/admin/)
 
 With Credentials:
 Username: admin
