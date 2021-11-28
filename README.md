@@ -104,7 +104,7 @@ Librarian Details:
 
 ## Featues with Images
 
-- <img src="https://github.com/krishna13052001/engage-images/blob/master/home.jpg" alt="Image Not Loaded" />
+<img src="https://github.com/krishna13052001/engage-images/blob/master/home.jpg" alt="Image Not Loaded" />
 
 
 ```bash
