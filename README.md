@@ -5,19 +5,11 @@ Hi,
 My name is Sathya Krishna, as a part of the Microsoft engage mentorship program, I have built a Student Welfare portal which it can be used in any university for managing different activities.
 
 ## Table of contents
-* [Author](#Author)
 * [Demo](#Demo)
 * [Installation](#Installation)
 * [Credentials](#Credentials)
 * [Documents](#Documents)
 * [Images](#Featues-with-Images)
-
-## Author
-
-My self Sathya Krishna pursuing my final year B.Tech in IIIT Kottayam in specialized in CSE department
-- [@krishna13052001 - Github](https://github.com/krishna13052001)
-- [@Sathya Krishna  - Linkedin ](https://www.linkedin.com/in/sathya-krishna-2001/)
-
 
 ## Demo
 
