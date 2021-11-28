@@ -2,7 +2,7 @@
 # Student Welfare Protrol
 
 Hi,
-My name is Sathya Krishna, as a part of the Microsoft engage mentorship program, I have built a Student Welfare portal where it can be used in any university for managing different activities related to the university.
+My name is Sathya Krishna, as a part of the Microsoft engage mentorship program, I have built a Student Welfare portal which it can be used in any university for managing different activities related to the university.
 
 ## Table of contents
 * [Author](#Author)
