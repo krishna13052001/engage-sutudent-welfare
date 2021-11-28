@@ -10,7 +10,7 @@ My name is Sathya Krishna, as a part of the Microsoft engage mentorship program,
 * [Installation](#Installation)
 * [Credentials](#Credentials)
 * [Documents](#Documents)
-* [Images](#Featues with Images)
+* [Images](#Featues-with-Images)
 
 ## Author
 
