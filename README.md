@@ -109,7 +109,7 @@ Librarian Details:
 
 ## Featues with Images
 
-- Home Page
+- Authentication
   * Login Page
 <img src="https://github.com/krishna13052001/engage-images/blob/master/home.jpg" alt="Image Not Loaded" />
 
@@ -117,7 +117,6 @@ Librarian Details:
 ```bash
   From the home we can able to toggle between Login and Register.
   Users' can access the website through their unique username and password which is set during the registration and enters the portal.
-
   Admin Doesn't have registraion only student, faculty, librarian can able to register to the webapplication.
 ```
   * Sign Up
@@ -139,3 +138,13 @@ On Successfull Login:
 
 Now Clike on the Users, and select any user and select the below option:
 <img src="https://github.com/krishna13052001/engage-images/blob/master/adminChange.jpg" alt="Image Not Loaded">
+
+  * Forget Password
+  Click on the Forgot password on the Home page then you will redirect to changePassword
+  <img src="https://github.com/krishna13052001/engage-images/blob/master/changePassword.jpg" alt="Image Not Loaded">
+
+  Now, Enter the OTP which recive to mail
+  <img scr="https://github.com/krishna13052001/engage-images/blob/master/startRecovery.jpg" alt="Image Not Loaded">
+
+  Now, Enter the New Password.
+
