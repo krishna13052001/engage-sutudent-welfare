@@ -100,3 +100,15 @@ Librarian Details:
 ## Documents
 
 - [List of Featues](https://docs.google.com/document/d/1D9eFgnfJ0DeSI6RJZR0ki6eRuvuLkPGC/edit?usp=sharing&ouid=116513581242175548881&rtpof=true&sd=true)
+
+
+## Featues with Images
+
+- <img src="https://drive.google.com/file/d/1H5jel_4YOfp0qCRApRAj-kv3_5HicsDQ/view" alt="Image Not Loaded" />
+
+
+```bash
+  From the home we can able to toggle between Login and Register.
+
+  Admin Doesn't have registraion only student, faculty, librarian can able to register to the webapplication.
+```
