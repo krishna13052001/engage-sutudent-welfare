@@ -12,7 +12,6 @@ django-s3direct==1.1.8
 django-storages==1.10.1
 docutils==0.16
 Jinja2==2.11.2
-Pillow==6.2.2
 python-dateutil==2.8.1
 psycopg2==2.8.6
 s3transfer==0.3.3

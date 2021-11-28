@@ -33,58 +33,6 @@ body {
   width: 100%;
 }
 
-/* .nav-link {
-  position: relative;
-  margin-left: 0.6vw;
-  margin-right: 0.6vw;
-  text-align: center;
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #999999;
-  border: 3px solid #99999900;
-  cursor: pointer;
-  transition: ease-out 0.5s;
-  -webkit-transition: ease-out 0.5s;
-  -moz-transition: ease-out 0.5s;
-
-}
-
-.nav-link::after,
-.nav-link::before {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  transition: .5s;
-}
-
-.nav-link::after {
-  top: -9px;
-  left: -9px;
-  border-top: 3px solid transparent;
-  border-left: 3px solid transparent;
-}
-
-.nav-link::before {
-  bottom: -9px;
-  right: -9px;
-  border-bottom: 3px solid transparent;
-  border-right: 3px solid transparent;
-}
-
-.nav-link:hover {
-  border: 3px solid #999999;
-  color: #222222;
-}
-
-.nav-link:hover::after,
-.nav-link:hover::before {
-  width: 30px;
-  height: 30px;
-  border-color: #222222;
-} */
-
 .inProgress {
   margin-top: 8vh;
 }

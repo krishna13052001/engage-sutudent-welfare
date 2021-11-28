@@ -40,9 +40,13 @@ While Running above command, If any problem occured regarding pillow Installatio
 Try:
 
 ```bash
-   pip install pillow
+   pip install Pillow
 ```
-
+If problem doesn't resolve then try:
+```bash
+  pip uninstall pillow
+  python -m pip install Pillow
+```
 
 To Run the site.
 ```bash
@@ -111,7 +115,7 @@ Librarian Details:
 
 
 
-  From the home we can able to toggle between Login and Sing Up.
+  From the home we can able to toggle between Login and Sign Up.
   Users' can access the website through their unique username and password which is set during the registration and enters the portal.
   Admin Doesn't have registraion only student, faculty, librarian can able to register to the webapplication.
 
