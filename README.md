@@ -136,11 +136,33 @@ Now Click on the Users, and select any user and select the below option:
 <img src="https://github.com/krishna13052001/engage-images/blob/master/adminChange.jpg" alt="Image Not Loaded">
 
   * Forgot Password
+  Users' who forgot their password can change it by using this option which will be done by verifyig their email.
   Click on the Forgot password on the Home page then you will redirect to changePassword page
+
   <img src="https://github.com/krishna13052001/engage-images/blob/master/changePassword.jpg" alt="Image Not Loaded">
 
-  Now, Enter the OTP which recive to mail
-  <img scr="https://github.com/krishna13052001/engage-images/blob/master/startRecovery.jpg" alt="Image Not Loaded">
+  Now, Enter the OTP which recived to mail.
+    if you enter wrong otp then you will redirect to 404 page<br>
+    or else,<br>
+     you can able to to change the password
 
-  Now, Enter the New Password.
+- Student Features
+  Student have different features like enrolling in courses, verifying their courses, requesting services etc.
+  * Your Course
+    Students can check in which courses they're enrolled in and also check the corresponding faculty of that course, check their attendance and also grades for that course.
+  <img src="https://github.com/krishna13052001/engage-images/blob/master/studentDashboard.jpg" alt="Image Not Loaded">
 
+  * Library
+    It shows list of available books in the library(uploaded by the librarian) and student can request books from the librarian and this page also shows books which has to be returned in the 		library and time remaining for submitting the book.
+  <img src="https://github.com/krishna13052001/engage-images/blob/master/studentLib.jpg" alt="Image Not Loaded">
+  <img src="https://github.com/krishna13052001/engage-images/blob/master/studentLib2.jpg" alt="Image Not Loaded">
+  
+  * Request Service
+    Student can request services from admin or ask for leave and other queries using this page. This page also displays a list of the past requests made by the student.
+  <img src="https://github.com/krishna13052001/engage-images/blob/master/studentServiceRequest.jpg" alt="Image Not Loaded">
+
+  * Anouncements
+    This page displays all the announcements made by the faculty,librarian or administration.
+    <img src="https://github.com/krishna13052001/engage-images/blob/master/studentAno.jpg" alt="Image Not Loaded">
+    
+  
