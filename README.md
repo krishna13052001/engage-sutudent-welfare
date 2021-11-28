@@ -51,7 +51,7 @@ To Run the site.
 
 
 
-If problem while Running the command python manage.py runserver and it indicates the manage.py not found then
+If any problem while Running the command python manage.py runserver , and if it indicates the manage.py not found then
 try:
 
 ```bash
@@ -59,16 +59,15 @@ try:
 ```
 
 
-    
 ## Credentials
 
-We are having 4 different types of users
+We have 4 different types of users
    - Student 
    - Faculty
    - Librarian
    - Admin
 
-Admin does have Registration Process.
+Admin doesn't have Registration Process.
 
 Login Details:
 ```bash
@@ -111,16 +110,16 @@ Librarian Details:
 <img src="https://github.com/krishna13052001/engage-images/blob/master/home.jpg" alt="Image Not Loaded" />
 
 
-```bash
-  From the home we can able to toggle between Login and Register.
+
+  From the home we can able to toggle between Login and Sing Up.
   Users' can access the website through their unique username and password which is set during the registration and enters the portal.
   Admin Doesn't have registraion only student, faculty, librarian can able to register to the webapplication.
-```
+
   * Sign Up
 <img src="https://github.com/krishna13052001/engage-images/blob/master/signup.jpg">
 
 ```bash
-  New user registers themselves with their name, email address, a unique username, safe password and selects their role in the college.
+  New users registers themselves with their name, email address, a unique username, safe password and selects their role in the college.
 ```
 
 A Normal user can able to convert as admin user using admin account to login to default admin use this link: [adminLink](https://engage-student-welfare.herokuapp.com/admin/)
