@@ -116,6 +116,26 @@ Librarian Details:
 
 ```bash
   From the home we can able to toggle between Login and Register.
+  Users' can access the website through their unique username and password which is set during the registration and enters the portal.
 
   Admin Doesn't have registraion only student, faculty, librarian can able to register to the webapplication.
 ```
+  * Sign Up
+<img src="https://github.com/krishna13052001/engage-images/blob/master/signup.jpg">
+
+```bash
+  New user registers themselves with their name, email address, a unique username, safe password and selects their role in the college.
+```
+
+A Normal user can able to convert as admin user using admin account to login to default admin use this link: [adminLink](https://engage-student-welfare.herokuapp.com/admin/)
+
+With Credentials:
+Username: admin
+Password: admin
+<img src="https://github.com/krishna13052001/engage-images/blob/master/adminLogin.jpg" alt="Image Not Loaded" >
+
+On Successfull Login:
+<img src="https://github.com/krishna13052001/engage-images/blob/master/adminHome.jpg" alt="Image Not Loaded">
+
+Now Clike on the Users, and select any user and select the below option:
+<img src="https://github.com/krishna13052001/engage-images/blob/master/adminChange.jpg" alt="Image Not Loaded">
