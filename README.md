@@ -140,7 +140,7 @@ Now Click on the Users, and select any user and select the below option:
 <img src="https://github.com/krishna13052001/engage-images/blob/master/adminChange.jpg" alt="Image Not Loaded">
 
   * Forgot Password <br>
-  Users' who forgot their password can change it by using this option which will be done by verifyig their email.
+  Users' who forgot their password can change it by using this option which will be done by verifying their email.
   Click on the Forgot password on the Home page then you will redirect to changePassword page
 
   <img src="https://github.com/krishna13052001/engage-images/blob/master/changePassword.jpg" alt="Image Not Loaded">
