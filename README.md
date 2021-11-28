@@ -163,6 +163,6 @@ Now Click on the Users, and select any user and select the below option:
 
   * Anouncements
     This page displays all the announcements made by the faculty,librarian or administration.
-    <img src="https://github.com/krishna13052001/engage-images/blob/master/studentAno.jpg" alt="Image Not Loaded">
+  <img src="https://github.com/krishna13052001/engage-images/blob/master/studentAno.jpg" alt="Image Not Loaded">
     
   
